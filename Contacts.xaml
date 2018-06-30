@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loading="Page_Loading">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -14,14 +14,11 @@
             <RowDefinition Height="100" />
         </Grid.RowDefinitions>
 
-        <ListView ItemsSource ="{x:Bind Contacts1}">
+        <ListView Name="ContactsListView">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="data:Contact">
                     <StackPanel>
                         <TextBlock Text="{x:Bind Name}" />
-                        <TextBlock Text="{x:Bind Hphone}"/>
-                        <TextBlock Text="{x:Bind Wphone}"/>
-                        <TextBlock Text="{x:Bind Email}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

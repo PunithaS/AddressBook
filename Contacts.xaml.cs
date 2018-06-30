@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using AddressBook;
+using System.Threading.Tasks;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -23,13 +24,23 @@ namespace AddressBook
     /// </summary>
     public sealed partial class Contacts : Page
     {
-        public List<Contact> Contacts1;
+        public ICollection<Contact> ContactsList;
 
         public Contacts()
         {
             this.InitializeComponent();
-           // Contacts1 = ContactManager.GetContacts().Result;
-           
+            //ContactsList = Contact.GetContactsAsync();
+
+            ///Asynchronous function GetContactsAsync() 
+            ///cannot be called here as a constructor function cannot be async
+            ///so to load contacts in a list view, we can call the function GetContactsAsync()
+            ///when the event PageLoading is occuring
+        }
+
+        private async void Page_Loading(FrameworkElement sender, object args)
+        {
+            ContactsList = await Contact.GetContactsAsync();
+            ContactsListView.ItemsSource = ContactsList;
         }
     }
 }

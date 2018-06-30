@@ -68,7 +68,7 @@ namespace AddressBook
         {
             var contactData = $"{contacts.Name};{contacts.Hphone};" +
                 $"{contacts.Wphone};{contacts.Email};{contacts.Street1};" +
-                $"{contacts.Street2},{contacts.City};{contacts.State};{contacts.Zip}";
+                $"{contacts.Street2};{contacts.City};{contacts.State};{contacts.Zip}";
             await FileHelper.WriteTextFile(TEXT_FILE, contactData);
         }
 
@@ -76,7 +76,7 @@ namespace AddressBook
         {
             var contactData = $"{contacts.Name};{contacts.Hphone};" +
                 $"{contacts.Wphone};{contacts.Email};{contacts.Street1};" +
-                $"{contacts.Street2},{contacts.City};{contacts.State};{contacts.Zip}";
+                $"{contacts.Street2};{contacts.City};{contacts.State};{contacts.Zip}";
             await FileHelper.AppendTextFile(TEXT_FILE, contactData);
         }
     }

@@ -56,10 +56,21 @@ namespace AddressBook
 
         public static async Task<string> AppendTextFile(string filename, string contents)
         {
+            contents = contents + Environment.NewLine;
             // IEnumerable<String> lines = new List<String>() { contents };
             StorageFolder localFolder = ApplicationData.Current.LocalFolder;
-            StorageFile textfile = await localFolder.GetFileAsync(filename);
-            await FileIO.AppendTextAsync(textfile, contents + Environment.NewLine);
+            try
+            {
+                StorageFile textfile = await localFolder.GetFileAsync(filename);
+                await FileIO.AppendTextAsync(textfile, contents);
+
+                return textfile.Path;
+            }
+            catch (System.IO.FileNotFoundException)
+            {
+                // If file not found, we can't append. Hence, create a new file and write.
+                return await WriteTextFile(filename, contents);
+            }
 
 
             //using (IRandomAccessStream textStream = await
@@ -72,8 +83,6 @@ namespace AddressBook
             //        await textWriter.StoreAsync();
             //    }
             //}
-
-            return textfile.Path;
         }
     }
 }
