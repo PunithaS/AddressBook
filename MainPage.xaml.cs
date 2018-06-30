@@ -25,7 +25,7 @@ namespace AddressBook
         public MainPage()
         {
             this.InitializeComponent();
-            MyFrame.Navigate(typeof(Contacts));
+           // MyFrame.Navigate(typeof(Contacts));
             //this.DataContext = Contact.GetContacts();
         }
 

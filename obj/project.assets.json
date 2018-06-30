@@ -27494,24 +27494,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\numin\\.nuget\\packages\\": {},
+    "C:\\Users\\Madhavan\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\KalAcademyGit\\SoftwareDevC1Team42\\AddressBook.csproj",
+      "projectUniqueName": "C:\\Git\\SoftwareDevC1Team4\\AddressBook.csproj",
       "projectName": "AddressBook",
-      "projectPath": "C:\\KalAcademyGit\\SoftwareDevC1Team42\\AddressBook.csproj",
-      "packagesPath": "C:\\Users\\numin\\.nuget\\packages\\",
-      "outputPath": "C:\\KalAcademyGit\\SoftwareDevC1Team42\\obj\\",
+      "projectPath": "C:\\Git\\SoftwareDevC1Team4\\AddressBook.csproj",
+      "packagesPath": "C:\\Users\\Madhavan\\.nuget\\packages\\",
+      "outputPath": "C:\\Git\\SoftwareDevC1Team4\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\numin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Madhavan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -37,10 +37,10 @@ namespace AddressBook
             ///when the event PageLoading is occuring
         }
 
-        private async void Page_Loading(FrameworkElement sender, object args)
-        {
-            ContactsList = await Contact.GetContactsAsync();
-            ContactsListView.ItemsSource = ContactsList;
-        }
+       private async void Page_Loading(FrameworkElement sender, object args)
+       {
+          ContactsList = await Contact.GetContactsAsync();
+         ContactsListView.ItemsSource = ContactsList;
+       }
     }
 }
