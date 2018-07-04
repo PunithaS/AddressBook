@@ -38,7 +38,7 @@ namespace AddressBook
             return cdetails;
         }
 
-        public static async Task<ICollection<Contact>> GetContactsAsync()
+        public static async Task<ObservableCollection<Contact>> GetContactsAsync()
         {
             var contactsList = new ObservableCollection<Contact>();
             StorageFolder folder = ApplicationData.Current.LocalFolder;
