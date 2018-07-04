@@ -79,5 +79,21 @@ namespace AddressBook
                 $"{contacts.Street2};{contacts.City};{contacts.State};{contacts.Zip}";
             await FileHelper.AppendTextFile(TEXT_FILE, contactData);
         }
+
+        public async static void WriteContactCollection(ICollection<Contact> contactcollection)
+        {
+            string contactsData = string.Empty;
+            foreach (var contact in contactcollection)
+            {
+                contactsData += $"{contact.Name};{contact.Hphone};{contact.Wphone};" +
+                    $"{contact.Email};{contact.Street1};{contact.Street1};" +
+                    $"{contact.City};{contact.State};{contact.Zip}" + Environment.NewLine;
+            }
+
+            await FileHelper.CreateTextFile(TEXT_FILE, contactsData);
+        }
+
+
+
     }
 }
