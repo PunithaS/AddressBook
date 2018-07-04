@@ -29,20 +29,32 @@
                    HorizontalAlignment="Stretch">
 
             <SplitView.Pane>
+
                 <ListBox SelectionMode="Single" Name="OptionsList"  SelectedIndex="0" SelectionChanged="OptionsList_SelectionChanged">
+
                     <ListBoxItem Name="ContactList">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE77B;" />
                             <TextBlock Text="Contact List"  FontSize="36" Margin="10,0,0,0" />
                         </StackPanel>
                     </ListBoxItem>
+
                     <ListBoxItem Name="AddContact">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE710;" />
                             <TextBlock Text="Add Contact"  FontSize="36" Margin="10,0,0,0" />
                         </StackPanel>
                     </ListBoxItem>
+
+                    <ListBoxItem Name="DeleteContact">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE107;" />
+                            <TextBlock Text="Delete Contact"  FontSize="36" Margin="10,0,0,0" />
+                        </StackPanel>
+                    </ListBoxItem>
+
                 </ListBox>
+                
             </SplitView.Pane>
 
             <SplitView.Content>

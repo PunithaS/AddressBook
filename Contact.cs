@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,7 +40,7 @@ namespace AddressBook
 
         public static async Task<ICollection<Contact>> GetContactsAsync()
         {
-            var contactsList = new List<Contact>();
+            var contactsList = new ObservableCollection<Contact>();
             StorageFolder folder = ApplicationData.Current.LocalFolder;
             var contactFile = await folder.GetFileAsync(TEXT_FILE);
             var lines = await FileIO.ReadLinesAsync(contactFile);
