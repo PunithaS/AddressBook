@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,16 +42,13 @@ namespace AddressBook
 
             using (IRandomAccessStream textStream = await textFile.OpenReadAsync())
             {
-
                 using (DataReader textReader = new DataReader(textStream))
                 {
                     uint textLength = (uint)textStream.Size;
                     await textReader.LoadAsync(textLength);
                     contents = textReader.ReadString(textLength);
                 }
-
             }
-
             return contents;
         }
 
@@ -63,7 +61,7 @@ namespace AddressBook
             {
                 StorageFile textfile = await localFolder.GetFileAsync(filename);
                 await FileIO.AppendTextAsync(textfile, contents);
-
+                File.Delete(contents);
                 return textfile.Path;
             }
             catch (System.IO.FileNotFoundException)
@@ -71,18 +69,6 @@ namespace AddressBook
                 // If file not found, we can't append. Hence, create a new file and write.
                 return await WriteTextFile(filename, contents);
             }
-
-
-            //using (IRandomAccessStream textStream = await
-            //   textfile.OpenAsync(FileAccessMode.ReadWrite))
-            //{
-
-            //    using (DataWriter textWriter = new DataWriter(textStream))
-            //    {
-            //        textWriter.WriteString(contents);
-            //        await textWriter.StoreAsync();
-            //    }
-            //}
         }
     }
 }

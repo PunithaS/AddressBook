@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,22 +21,22 @@ namespace AddressBook
         public string State { get; set; }
         public string Zip { get; set; }
 
-        public static Contact GetContacts()
-        {
-            var cdetails = new Contact
-            {
-                Name = "aaa",
-                Hphone = "3434",
-                Wphone = "3453455678",
-                Email = "punitha.mad@gmail.com",
-                Street1 = "asd",
-                Street2 = "asdf",
-                City = "sammamish",
-                State = "wa",
-                Zip = "34343"
-            };
-            return cdetails;
-        }
+        //public static Contact GetContacts()
+        //{
+        //    var cdetails = new Contact
+        //    {
+        //        Name = "aaa",
+        //        Hphone = "3434",
+        //        Wphone = "3453455678",
+        //        Email = "punitha.mad@gmail.com",
+        //        Street1 = "asd",
+        //        Street2 = "asdf",
+        //        City = "sammamish",
+        //        State = "wa",
+        //        Zip = "34343"
+        //    };
+        //    return cdetails;
+        //}
 
         public static async Task<ICollection<Contact>> GetContactsAsync()
         {
@@ -64,6 +65,32 @@ namespace AddressBook
             return contactsList;
         }
 
+        public static async Task<Contact> GetSingleContactsAsync(string name)
+        {
+            StorageFolder folder = ApplicationData.Current.LocalFolder;
+            StorageFile contactFile = await folder.GetFileAsync(TEXT_FILE);
+            var lines = await FileIO.ReadLinesAsync(contactFile);
+            var contact = new Contact();
+            foreach (var line in lines)
+            {
+                var contactsData = line.Split(';');
+                if (contactsData[0] == name)
+                {
+
+                    contact.Name = contactsData[0];
+                    contact.Hphone = contactsData[1];
+                    contact.Wphone = contactsData[2];
+                    contact.Email = contactsData[3];
+                    contact.Street1 = contactsData[4];
+                    contact.Street2 = contactsData[5];
+                    contact.City = contactsData[6];
+                    contact.State = contactsData[7];
+                    contact.Zip = contactsData[8];
+                }
+            }
+            return contact;
+        }
+
         public async static void WriteContact(Contact contacts)
         {
             var contactData = $"{contacts.Name};{contacts.Hphone};" +
@@ -78,6 +105,33 @@ namespace AddressBook
                 $"{contacts.Wphone};{contacts.Email};{contacts.Street1};" +
                 $"{contacts.Street2};{contacts.City};{contacts.State};{contacts.Zip}";
             await FileHelper.AppendTextFile(TEXT_FILE, contactData);
+        }
+
+        public async static void EditContact(Contact editedContacts)
+        {
+            var updatedLines = new List<String>();
+            StorageFolder folder = ApplicationData.Current.LocalFolder;
+            StorageFile contactFile = await folder.GetFileAsync(TEXT_FILE);
+            IList<string> originalLines =  File.ReadAllLines(contactFile.Path);
+            var contact = new Contact();
+            foreach (var line in originalLines)
+            {
+                string[] oldContactsDataPerLine = line.Split(';');
+                if(oldContactsDataPerLine[0].CompareTo(editedContacts.Name)==0)
+                {
+                    oldContactsDataPerLine[0] = editedContacts.Name;
+                    oldContactsDataPerLine[1] = editedContacts.Hphone;
+                    oldContactsDataPerLine[2] = editedContacts.Wphone;
+                    oldContactsDataPerLine[3] = editedContacts.Email;
+                    oldContactsDataPerLine[4] = editedContacts.Street1;
+                    oldContactsDataPerLine[5] = editedContacts.Street2;
+                    oldContactsDataPerLine[6] = editedContacts.City;
+                    oldContactsDataPerLine[7] = editedContacts.State;
+                    oldContactsDataPerLine[8] = editedContacts.Zip;
+                }
+                updatedLines.Add(string.Join(";", oldContactsDataPerLine));
+            }
+            File.WriteAllLines(contactFile.Path, updatedLines.ToArray());
         }
     }
 }

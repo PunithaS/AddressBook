@@ -14,7 +14,7 @@
             <RowDefinition Height="100" />
         </Grid.RowDefinitions>
 
-        <ListView Name="ContactsListView">
+        <ListView Name="ContactsListView" SelectionChanged="ContactsListView_SelectionChanged" IsItemClickEnabled="True" ItemClick="ContactsListView_ItemClick">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="data:Contact">
                     <StackPanel>
