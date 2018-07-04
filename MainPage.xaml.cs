@@ -44,6 +44,10 @@ namespace AddressBook
             {
                 MyFrame.Navigate(typeof(AddContacts));
             }
+            else if (DeleteContact.IsSelected)
+            {
+                MyFrame.Navigate(typeof(DeleteContact));
+            }
         }
     }
 }
