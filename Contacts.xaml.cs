@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using AddressBook;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -24,7 +25,7 @@ namespace AddressBook
     /// </summary>
     public sealed partial class Contacts : Page
     {
-        public ICollection<Contact> ContactsList;
+        public ObservableCollection<Contact> ContactsList;
 
         public Contacts()
         {
