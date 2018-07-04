@@ -40,7 +40,7 @@ namespace AddressBook
 
         private async void Page_Loading(FrameworkElement sender, object args)
         {
-            ContactsList = await Contact.GetContactsAsync() as ObservableCollection<Contact>;
+            ContactsList = await Contact.GetContactsAsync();
             ContactsListView.ItemsSource = ContactsList;
         }
 
