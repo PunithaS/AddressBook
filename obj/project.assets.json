@@ -27500,11 +27500,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Git\\SoftwareDevC1Team4\\AddressBook.csproj",
+      "projectUniqueName": "C:\\Git\\SoftwareDevC1Team4\\AddressBook\\AddressBook.csproj",
       "projectName": "AddressBook",
-      "projectPath": "C:\\Git\\SoftwareDevC1Team4\\AddressBook.csproj",
+      "projectPath": "C:\\Git\\SoftwareDevC1Team4\\AddressBook\\AddressBook.csproj",
       "packagesPath": "C:\\Users\\Madhavan\\.nuget\\packages\\",
-      "outputPath": "C:\\Git\\SoftwareDevC1Team4\\obj\\",
+      "outputPath": "C:\\Git\\SoftwareDevC1Team4\\AddressBook\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
