@@ -42,27 +42,37 @@ namespace AddressBook
         {
             var contactsList = new ObservableCollection<Contact>();
             StorageFolder folder = ApplicationData.Current.LocalFolder;
-            var contactFile = await folder.GetFileAsync(TEXT_FILE);
-            var lines = await FileIO.ReadLinesAsync(contactFile);
-            foreach (var line in lines)
-            {
-                var contactsData = line.Split(';');
-                var contact = new Contact
-                {
-                    Name = contactsData[0],
-                    Hphone = contactsData[1],
-                    Wphone = contactsData[2],
-                    Email = contactsData[3],
-                    Street1 = contactsData[4],
-                    Street2 = contactsData[5],
-                    City = contactsData[6],
-                    State = contactsData[7],
-                    Zip = contactsData[8]
 
-                };
-                contactsList.Add(contact);
+            try
+            {
+                var contactFile = await folder.GetFileAsync(TEXT_FILE);
+                var lines = await FileIO.ReadLinesAsync(contactFile);
+                foreach (var line in lines)
+                {
+                    var contactsData = line.Split(';');
+                    var contact = new Contact
+                    {
+                        Name = contactsData[0],
+                        Hphone = contactsData[1],
+                        Wphone = contactsData[2],
+                        Email = contactsData[3],
+                        Street1 = contactsData[4],
+                        Street2 = contactsData[5],
+                        City = contactsData[6],
+                        State = contactsData[7],
+                        Zip = contactsData[8]
+
+                    };
+                    contactsList.Add(contact);
+                }
+            }
+            catch (System.IO.FileNotFoundException)
+            {
+                ///ignore exception and return empty list
+                contactsList.Clear();
             }
             return contactsList;
+
         }
 
         public async static void WriteContact(Contact contacts)
