@@ -44,13 +44,28 @@ namespace AddressBook
             ContactsListView.ItemsSource = ContactsList;
         }
 
-        private void ContactsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void ContactsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var index = ContactsListView.SelectedIndex;
-            if(index>=0)
+
+            if (index >= 0)
             {
-                ContactsList.Remove(ContactsListView.SelectedItem as Contact);
-                Contact.WriteContactCollection(ContactsList);
+                var deleteConfirmationDialog = new DeleteConfirmationDialog();
+                ContentDialogResult result = await deleteConfirmationDialog.ShowAsync();
+
+                /// Delete the contact if the user clicked the primary button.
+                /// Otherwise, do nothing.
+                if (result == ContentDialogResult.Primary)
+                {
+                    /// Delete the contact.
+                    ContactsList.Remove(ContactsListView.SelectedItem as Contact);
+                    Contact.WriteContactCollection(ContactsList);
+                }
+                else
+                {
+                    /// The user clicked the Cancel Button, pressed ESC, Gamepad B, or the system back button.
+                    /// Do nothing.
+                }
             }
         }
     }
