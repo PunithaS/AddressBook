@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
+using System.Collections.ObjectModel;
+
 
 namespace AddressBook
 {
@@ -22,6 +24,7 @@ namespace AddressBook
         public string City { get; set; }
         public string State { get; set; }
         public string Zip { get; set; }
+        public string IsFav { get; set; }
         
         //public static Contact GetContacts()
         //{
@@ -63,7 +66,8 @@ namespace AddressBook
                         City = contactsData[6],
                         State = contactsData[7],
                         Zip = contactsData[8],
-                        id = contactsData[9]
+                        id = contactsData[9],
+                        IsFav = contactsData[10]
 
                     };
                     contactsList.Add(contact);
@@ -100,6 +104,7 @@ namespace AddressBook
                     contact.State = contactsData[7];
                     contact.Zip = contactsData[8];
                     contact.id = contactsData[9];
+                    contact.IsFav = contactsData[10];
                 }
             }
             return contact;
@@ -109,7 +114,7 @@ namespace AddressBook
         {
             var contactData = $"{contacts.Name};{contacts.Hphone};" +
                 $"{contacts.Wphone};{contacts.Email};{contacts.Street1};" +
-                $"{contacts.Street2};{contacts.City};{contacts.State};{contacts.Zip};{contacts.id}";
+                $"{contacts.Street2};{contacts.City};{contacts.State};{contacts.Zip};{contacts.id};{contacts.IsFav}";
             await FileHelper.WriteTextFile(TEXT_FILE, contactData);
         }
 
@@ -117,7 +122,7 @@ namespace AddressBook
         {
             var contactData = $"{contacts.Name};{contacts.Hphone};" +
                 $"{contacts.Wphone};{contacts.Email};{contacts.Street1};" +
-                $"{contacts.Street2};{contacts.City};{contacts.State};{contacts.Zip};{contacts.id}";
+                $"{contacts.Street2};{contacts.City};{contacts.State};{contacts.Zip};{contacts.id};{contacts.IsFav}";
             await FileHelper.AppendTextFile(TEXT_FILE, contactData);
         }
 
@@ -157,13 +162,43 @@ namespace AddressBook
             {
                 contactsData += $"{contact.Name};{contact.Hphone};{contact.Wphone};" +
                     $"{contact.Email};{contact.Street1};{contact.Street1};" +
-                    $"{contact.City};{contact.State};{contact.Zip};{contact.id}" + Environment.NewLine;
+                    $"{contact.City};{contact.State};{contact.Zip};{contact.id};{contact.IsFav}" + Environment.NewLine;
             }
 
             await FileHelper.CreateTextFile(TEXT_FILE, contactsData);
         }
 
+        public static async Task<ICollection<Contact>> GetFavContactsAsync()
+        {
+            StorageFolder folder = ApplicationData.Current.LocalFolder;
+            StorageFile contactFile = await folder.GetFileAsync(TEXT_FILE);
+            var lines = await FileIO.ReadLinesAsync(contactFile);
+            var favContactsList = new List<Contact>();
+            foreach (var line in lines)
+            {
+                var contactsData = line.Split(';');
 
+                if (contactsData[10] == "True")
+                {
+                    var favContact = new Contact
+                    {
+                        Name = contactsData[0],
+                        Hphone = contactsData[1],
+                        Wphone = contactsData[2],
+                        Email = contactsData[3],
+                        Street1 = contactsData[4],
+                        Street2 = contactsData[5],
+                        City = contactsData[6],
+                        State = contactsData[7],
+                        Zip = contactsData[8],
+                        id = contactsData[9],
+                        IsFav = contactsData[10]
+                    };
+                    favContactsList.Add(favContact);
+                }
+            }
+            return favContactsList;
+        }
 
     }
 }

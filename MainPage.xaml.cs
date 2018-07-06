@@ -41,15 +41,23 @@ namespace AddressBook
             if (ContactList.IsSelected)
             {
                 MyFrame.Navigate(typeof(Contacts));
-            }
-            else if (AddContact.IsSelected)
+            }else if (AddContact.IsSelected)
             {
                 MyFrame.Navigate(typeof(AddContacts));
+            }else if (FavContact.IsSelected)
+            {
+                MyFrame.Navigate(typeof(FavContacts));
             }
             else if (DeleteContact.IsSelected)
             {
                 MyFrame.Navigate(typeof(DeleteContact));
             }
+            else if (FavContact.IsSelected)
+            {
+                MyFrame.Navigate(typeof(FavContacts));
+            }
         }
+
+
     }
 }

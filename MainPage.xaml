@@ -26,7 +26,7 @@
 
         <SplitView Name="MySplitView" Grid.Row="1" 
                    DisplayMode="CompactInline" 
-                   OpenPaneLength="305" 
+                   OpenPaneLength="350" 
                    CompactPaneLength="58" 
                    HorizontalAlignment="Stretch">
 
@@ -40,10 +40,17 @@
                             <TextBlock Text="Contact List"  FontSize="36" Margin="10,0,0,0" />
                         </StackPanel>
                     </ListBoxItem>
+                    
+                    <ListBoxItem Name="FavContact">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE734;" />
+                            <TextBlock Text="Favorite Contacts"  FontSize="36" Margin="10,0,0,0" />
+                        </StackPanel>
+                    </ListBoxItem>
 
                     <ListBoxItem Name="AddContact">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE710;" />
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE8FA;" />
                             <TextBlock Text="Add Contact"  FontSize="36" Margin="10,0,0,0" />
                         </StackPanel>
                     </ListBoxItem>
@@ -54,6 +61,7 @@
                             <TextBlock Text="Delete Contact"  FontSize="36" Margin="10,0,0,0" />
                         </StackPanel>
                     </ListBoxItem>
+                    
 
                 </ListBox>
                 

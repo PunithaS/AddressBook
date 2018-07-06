@@ -30,13 +30,9 @@ namespace AddressBook
         public Contacts()
         {
             this.InitializeComponent();
-            //ContactsList = Contact.GetContactsAsync();
-
-            ///Asynchronous function GetContactsAsync() 
-            ///cannot be called here as a constructor function cannot be async
-            ///so to load contacts in a list view, we can call the function GetContactsAsync()
-            ///when the event PageLoading is occuring
         }
+
+        // To load contacts in a list view, we can call the function GetContactsAsync() when the event PageLoading is occuring
 
         private async void Page_Loading(FrameworkElement sender, object args)
         {
