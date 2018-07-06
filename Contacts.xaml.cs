@@ -43,5 +43,19 @@ namespace AddressBook
           ContactsList = await Contact.GetContactsAsync();
          ContactsListView.ItemsSource = ContactsList;
        }
+
+        private void ContactsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //ListViewItem lbi = ((sender as ListBox).SelectedItem as ListViewItem);
+            //Selected.Text = "   You selected " + lbi.Content.ToString() + ".";
+
+        }
+
+        private void ContactsListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Contact selectedContact = (Contact)e.ClickedItem;
+           // Selected.Text = selectedContact.Name;
+            MainPage.MainPageFrame.Navigate(typeof(EditContacts),selectedContact.Name);
+        }
     }
 }
