@@ -23,7 +23,7 @@ namespace AddressBook
     /// </summary>
     public sealed partial class AddContacts : Page
     {
-        
+
         public AddContacts()
         {
             this.InitializeComponent();

@@ -48,7 +48,14 @@ namespace AddressBook
             {
                 MyFrame.Navigate(typeof(FavContacts));
             }
-
+            else if (DeleteContact.IsSelected)
+            {
+                MyFrame.Navigate(typeof(DeleteContact));
+            }
+            else if (FavContact.IsSelected)
+            {
+                MyFrame.Navigate(typeof(FavContacts));
+            }
         }
 
 

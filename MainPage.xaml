@@ -18,7 +18,9 @@
         
         <!--SplitView for the "Add Contact" option -->
         <RelativePanel>
-            <Button Name="HamburgerButton" RelativePanel.AlignLeftWithPanel="True" FontFamily="Segoe MDL2 Assets" Background="#FFC2CBC1" Content="&#xE700;" FontSize="36" Click="HamburgerButton_Click" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" />
+            <Button Name="HamburgerButton" RelativePanel.AlignLeftWithPanel="True" FontFamily="Segoe MDL2 Assets" 
+                    Background="#FFC2CBC1" Content="&#xE700;" FontSize="36" 
+                    Click="HamburgerButton_Click" HorizontalAlignment="Center" />
             <TextBlock Name=" Title" RelativePanel.RightOf="HamburgerButton" FontSize ="28" Text="Contact Book" Margin="10,0,0,0" />
         </RelativePanel>
 
@@ -29,26 +31,40 @@
                    HorizontalAlignment="Stretch">
 
             <SplitView.Pane>
+
                 <ListBox SelectionMode="Single" Name="OptionsList"  SelectedIndex="0" SelectionChanged="OptionsList_SelectionChanged">
+
                     <ListBoxItem Name="ContactList">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE77B;" />
                             <TextBlock Text="Contact List"  FontSize="36" Margin="10,0,0,0" />
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem Name="AddContact">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE8FA;" />
-                            <TextBlock Text="Add Contact"  FontSize="36" Margin="10,0,0,0" />
-                        </StackPanel>
-                    </ListBoxItem>
+                    
                     <ListBoxItem Name="FavContact">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE734;" />
                             <TextBlock Text="Favorite Contacts"  FontSize="36" Margin="10,0,0,0" />
                         </StackPanel>
                     </ListBoxItem>
+
+                    <ListBoxItem Name="AddContact">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE8FA;" />
+                            <TextBlock Text="Add Contact"  FontSize="36" Margin="10,0,0,0" />
+                        </StackPanel>
+                    </ListBoxItem>
+
+                    <ListBoxItem Name="DeleteContact">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE107;" />
+                            <TextBlock Text="Delete Contact"  FontSize="36" Margin="10,0,0,0" />
+                        </StackPanel>
+                    </ListBoxItem>
+                    
+
                 </ListBox>
+                
             </SplitView.Pane>
 
             <SplitView.Content>
