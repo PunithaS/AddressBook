@@ -58,7 +58,7 @@ namespace AddressBook
                 if (result == ContentDialogResult.Primary)
                 {
                     /// Delete the contact.
-                    ContactsList.Remove(ContactsListView.SelectedItem as Contact);
+                    ContactsList.RemoveAt(ContactsListView.SelectedIndex);
                     Contact.WriteContactCollection(ContactsList);
                 }
                 else
