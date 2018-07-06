@@ -21,32 +21,28 @@
                     <Grid>
 
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto" />
                             <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="auto" />
                             
                         </Grid.ColumnDefinitions>
-                        <StackPanel Orientation="Horizontal">
+                        
+                        
+                            
                             <StackPanel>
                                 <TextBlock Text="{x:Bind Name}" />
                             </StackPanel>
                             
-                            <StackPanel x:Name="space" Orientation="Horizontal" HorizontalAlignment="Right" CornerRadius="6,6,6,6" Width="850" >
-                               
-                            </StackPanel>
-                            <StackPanel x:Name="Button1" Orientation="Horizontal" HorizontalAlignment="Right" CornerRadius="6,0,0,6" >
-                                <Button Content="Edit" />
-                            </StackPanel>
-                            <StackPanel x:Name="Button2" Orientation="Horizontal" HorizontalAlignment="Right" CornerRadius="0,0,0,0" >
-
-                                <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Content="&#xE107;" />
-                                
-                            </StackPanel>
-                            <StackPanel x:Name="Button3" Orientation="Horizontal" HorizontalAlignment="Right" CornerRadius="0,6,6,0" >
-                                
-                                <Button Content="Favourite" />
+                            
+                            <StackPanel Grid.Column="1" x:Name="Buttons" Orientation="Horizontal" HorizontalAlignment="Right" CornerRadius="6,6,6,6" >
+                            <Button FontFamily="Segoe MDL2 Assets" FontSize="20" Content="&#xE104;" Click="EditButton_Click" />
+                            <Button FontFamily="Segoe MDL2 Assets" FontSize="20" Content="&#xE107;" Click="DeleteButton_Click" Visibility="Collapsed" />
+                            <Button FontFamily="Segoe MDL2 Assets" FontSize="20" Content="&#xE113;" />
                             </StackPanel>
                             
-                        </StackPanel>
+                            
+                            
+                        
+                        
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
