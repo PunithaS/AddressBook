@@ -38,11 +38,11 @@ namespace AddressBook
             ///when the event PageLoading is occuring
         }
 
-       private async void Page_Loading(FrameworkElement sender, object args)
-       {
-          ContactsList = await Contact.GetContactsAsync();
-         ContactsListView.ItemsSource = ContactsList;
-       }
+        private async void Page_Loading(FrameworkElement sender, object args)
+        {
+            ContactsList = await Contact.GetContactsAsync();
+            ContactsListView.ItemsSource = ContactsList;
+        }
 
         private void ContactsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -51,11 +51,46 @@ namespace AddressBook
 
         }
 
+
         private void ContactsListView_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Contact selectedContact = (Contact)e.ClickedItem;
-           // Selected.Text = selectedContact.Name;
-            MainPage.MainPageFrame.Navigate(typeof(EditContacts),selectedContact.id);
+            ///Contact selectedContact = (Contact)e.ClickedItem;
+            // Selected.Text = selectedContact.Name;
+            ///MainPage.MainPageFrame.Navigate(typeof(EditContacts), selectedContact.Name);
+        }
+
+
+        
+        private async void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            var index = ContactsListView.SelectedIndex;
+
+            if (index >= 0)
+            {
+                var deleteConfirmationDialog = new DeleteConfirmationDialog();
+                ContentDialogResult result = await deleteConfirmationDialog.ShowAsync();
+
+                /// Delete the contact if the user clicked the primary button.
+                /// Otherwise, do nothing.
+                if (result == ContentDialogResult.Primary)
+                {
+                    /// Delete the contact.
+                    ContactsList.RemoveAt(ContactsListView.SelectedIndex);
+                    Contact.WriteContactCollection(ContactsList);
+                }
+                else
+                {
+                    /// The user clicked the Cancel Button, pressed ESC, Gamepad B, or the system back button.
+                    /// Do nothing.
+                }
+            }
+        }
+    
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            Contact selectedContact = ContactsListView.SelectedItem as Contact;
+            // Selected.Text = selectedContact.Name;
+            MainPage.MainPageFrame.Navigate(typeof(EditContacts), selectedContact.id);
         }
     }
 }
