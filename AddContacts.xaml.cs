@@ -22,7 +22,7 @@ namespace AddressBook
     /// </summary>
     public sealed partial class AddContacts : Page
     {
-        
+
         public AddContacts()
         {
             this.InitializeComponent();
@@ -36,10 +36,10 @@ namespace AddressBook
         }
 
         //When clicking Save button, a new contact is saved created
-        private void Save_Click(object sender, RoutedEventArgs e)
+        private async void Save_Click(object sender, RoutedEventArgs e)
         {
-         
-            var contacts = new Contact
+
+            var contact = new Contact
             {
                 id = Guid.NewGuid().ToString(),
                 Name = Name.Text,
@@ -53,7 +53,11 @@ namespace AddressBook
                 Zip = Zip.Text
 
             };
-            Contact.AppendContact(contacts);
+            //Contact.AppendContact(contacts);
+
+            var collection = await Contact.GetContactsAsync();
+            collection.Add(contact);
+            Contact.WriteContactCollection(collection);
             Output.Text = "New contact has been added!";
         }
     }
