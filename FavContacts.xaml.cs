@@ -12,8 +12,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using AddressBook;
-using System.Threading.Tasks;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -22,23 +20,20 @@ namespace AddressBook
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Contacts : Page
+    public sealed partial class FavContacts : Page
     {
-        public ICollection<Contact> ContactsList;
-       //public List<Contact> FavContacts;
+        public ICollection<Contact> FavContactsList;
 
-        public Contacts()
+        public FavContacts()
         {
             this.InitializeComponent();
         }
 
-        // To load contacts in a list view, we can call the function GetContactsAsync() when the event PageLoading is occuring
-
         private async void Page_Loading(FrameworkElement sender, object args)
         {
-            ContactsList = await Contact.GetContactsAsync();
-            ContactsListView.ItemsSource = ContactsList;
-           
+            FavContactsList = await Contact.GetFavContactsAsync();
+            FavContactsListView.ItemsSource = FavContactsList;
+
         }
     }
 }

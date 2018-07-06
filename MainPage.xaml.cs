@@ -22,11 +22,13 @@ namespace AddressBook
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public static Frame MainPageFrame;
+
         public MainPage()
         {
             this.InitializeComponent();
-           // MyFrame.Navigate(typeof(Contacts));
-            //this.DataContext = Contact.GetContacts();
+            MainPageFrame = MyFrame;
+            MyFrame.Navigate(typeof(Contacts));
         }
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
@@ -39,11 +41,16 @@ namespace AddressBook
             if (ContactList.IsSelected)
             {
                 MyFrame.Navigate(typeof(Contacts));
-            }
-            else if (AddContact.IsSelected)
+            }else if (AddContact.IsSelected)
             {
                 MyFrame.Navigate(typeof(AddContacts));
+            }else if (FavContact.IsSelected)
+            {
+                MyFrame.Navigate(typeof(FavContacts));
             }
+
         }
+
+
     }
 }
