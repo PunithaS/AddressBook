@@ -35,7 +35,7 @@
                             
                             <StackPanel Grid.Column="1" x:Name="Buttons" Orientation="Horizontal" HorizontalAlignment="Right" CornerRadius="6,6,6,6" >
                             <Button FontFamily="Segoe MDL2 Assets" FontSize="20" Content="&#xE104;" Click="EditButton_Click" />
-                            <Button FontFamily="Segoe MDL2 Assets" FontSize="20" Content="&#xE107;" Click="DeleteButton_Click" Visibility="Collapsed" />
+                            <Button FontFamily="Segoe MDL2 Assets" FontSize="20" Content="&#xE107;" Click="DeleteButton_Click" Visibility="Visible" />
                             <Button FontFamily="Segoe MDL2 Assets" FontSize="20" Content="&#xE113;" />
                             </StackPanel>
                             
