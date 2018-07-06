@@ -90,7 +90,7 @@ namespace AddressBook
         {
             Contact selectedContact = ContactsListView.SelectedItem as Contact;
             // Selected.Text = selectedContact.Name;
-            MainPage.MainPageFrame.Navigate(typeof(EditContacts), selectedContact.Name);
+            MainPage.MainPageFrame.Navigate(typeof(EditContacts), selectedContact.id);
         }
     }
 }
