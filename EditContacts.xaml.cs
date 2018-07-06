@@ -23,7 +23,8 @@ namespace AddressBook
     public sealed partial class EditContacts : Page
     {
         public Contact contactItem;
-        
+       public string hangindId;
+
         public EditContacts()
         {
             this.InitializeComponent();
@@ -37,8 +38,8 @@ namespace AddressBook
         }
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
-            string selectedName = (string)e.Parameter;
-            contactItem = await Contact.GetSingleContactsAsync(selectedName);
+             string selectedId = (string)e.Parameter;
+            contactItem = await Contact.GetSingleContactsAsync(selectedId);
             Name.Text = contactItem.Name;
             HPhone.Text = contactItem.Hphone;
             WPhone.Text = contactItem.Wphone;
@@ -48,6 +49,7 @@ namespace AddressBook
             City.Text = contactItem.City;
             State.Text = contactItem.State;
             Zip.Text = contactItem.Zip;
+            hangindId=contactItem.id;
         }
 
         //When clicking Save button, a new contact is saved created
@@ -63,7 +65,8 @@ namespace AddressBook
                 Street2 = Street2.Text,
                 City = City.Text,
                 State = State.Text,
-                Zip = Zip.Text
+                Zip = Zip.Text,
+                id=hangindId
 
             };
                 Contact.EditContact(editedContacts);

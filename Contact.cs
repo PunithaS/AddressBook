@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +11,7 @@ namespace AddressBook
     public class Contact
     {
         const string TEXT_FILE = "ContactsTextFile.txt";
+        public string id { get; set; }
         public string Name { get; set; }
         public string Hphone { get; set; }
         public string Wphone { get; set; }
@@ -39,44 +39,35 @@ namespace AddressBook
         //    return cdetails;
         //}
 
-        public static async Task<ObservableCollection<Contact>> GetContactsAsync()
+        public static async Task<ICollection<Contact>> GetContactsAsync()
         {
-            var contactsList = new ObservableCollection<Contact>();
+            var contactsList = new List<Contact>();
             StorageFolder folder = ApplicationData.Current.LocalFolder;
-
-            try
+            var contactFile = await folder.GetFileAsync(TEXT_FILE);
+            var lines = await FileIO.ReadLinesAsync(contactFile);
+            foreach (var line in lines)
             {
-                var contactFile = await folder.GetFileAsync(TEXT_FILE);
-                var lines = await FileIO.ReadLinesAsync(contactFile);
-                foreach (var line in lines)
+                var contactsData = line.Split(';');
+                var contact = new Contact
                 {
-                    var contactsData = line.Split(';');
-                    var contact = new Contact
-                    {
-                        Name = contactsData[0],
-                        Hphone = contactsData[1],
-                        Wphone = contactsData[2],
-                        Email = contactsData[3],
-                        Street1 = contactsData[4],
-                        Street2 = contactsData[5],
-                        City = contactsData[6],
-                        State = contactsData[7],
-                        Zip = contactsData[8]
+                    Name = contactsData[0],
+                    Hphone = contactsData[1],
+                    Wphone = contactsData[2],
+                    Email = contactsData[3],
+                    Street1 = contactsData[4],
+                    Street2 = contactsData[5],
+                    City = contactsData[6],
+                    State = contactsData[7],
+                    Zip = contactsData[8],
+                    id = contactsData[9]
 
-                    };
-                    contactsList.Add(contact);
-                }
-            }
-            catch (System.IO.FileNotFoundException)
-            {
-                ///ignore exception and return empty list
-                contactsList.Clear();
+                };
+                contactsList.Add(contact);
             }
             return contactsList;
-
         }
 
-        public static async Task<Contact> GetSingleContactsAsync(string name)
+        public static async Task<Contact> GetSingleContactsAsync(string id)
         {
             StorageFolder folder = ApplicationData.Current.LocalFolder;
             StorageFile contactFile = await folder.GetFileAsync(TEXT_FILE);
@@ -85,7 +76,7 @@ namespace AddressBook
             foreach (var line in lines)
             {
                 var contactsData = line.Split(';');
-                if (contactsData[0] == name)
+                if (contactsData[9] == id)
                 {
 
                     contact.Name = contactsData[0];
@@ -97,6 +88,7 @@ namespace AddressBook
                     contact.City = contactsData[6];
                     contact.State = contactsData[7];
                     contact.Zip = contactsData[8];
+                    contact.id = contactsData[9];
                 }
             }
             return contact;
@@ -106,7 +98,7 @@ namespace AddressBook
         {
             var contactData = $"{contacts.Name};{contacts.Hphone};" +
                 $"{contacts.Wphone};{contacts.Email};{contacts.Street1};" +
-                $"{contacts.Street2};{contacts.City};{contacts.State};{contacts.Zip}";
+                $"{contacts.Street2};{contacts.City};{contacts.State};{contacts.Zip};{contacts.id}";
             await FileHelper.WriteTextFile(TEXT_FILE, contactData);
         }
 
@@ -114,7 +106,7 @@ namespace AddressBook
         {
             var contactData = $"{contacts.Name};{contacts.Hphone};" +
                 $"{contacts.Wphone};{contacts.Email};{contacts.Street1};" +
-                $"{contacts.Street2};{contacts.City};{contacts.State};{contacts.Zip}";
+                $"{contacts.Street2};{contacts.City};{contacts.State};{contacts.Zip};{contacts.id}";
             await FileHelper.AppendTextFile(TEXT_FILE, contactData);
         }
 
@@ -128,7 +120,8 @@ namespace AddressBook
             foreach (var line in originalLines)
             {
                 string[] oldContactsDataPerLine = line.Split(';');
-                if(oldContactsDataPerLine[0].CompareTo(editedContacts.Name)==0)
+                if(oldContactsDataPerLine[9]==editedContacts.id)
+             //   if(oldContactsDataPerLine[9].CompareTo(editedContacts.id)==0)
                 {
                     oldContactsDataPerLine[0] = editedContacts.Name;
                     oldContactsDataPerLine[1] = editedContacts.Hphone;
@@ -144,21 +137,5 @@ namespace AddressBook
             }
             File.WriteAllLines(contactFile.Path, updatedLines.ToArray());
         }
-
-        public async static void WriteContactCollection(ICollection<Contact> contactcollection)
-        {
-            string contactsData = string.Empty;
-            foreach (var contact in contactcollection)
-            {
-                contactsData += $"{contact.Name};{contact.Hphone};{contact.Wphone};" +
-                    $"{contact.Email};{contact.Street1};{contact.Street1};" +
-                    $"{contact.City};{contact.State};{contact.Zip}" + Environment.NewLine;
-            }
-
-            await FileHelper.CreateTextFile(TEXT_FILE, contactsData);
-        }
-
-
-
     }
 }
