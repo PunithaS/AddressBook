@@ -41,6 +41,7 @@ namespace AddressBook
          
             var contacts = new Contact
             {
+                id = Guid.NewGuid().ToString(),
                 Name = Name.Text,
                 Hphone = HPhone.Text,
                 Wphone = WPhone.Text,

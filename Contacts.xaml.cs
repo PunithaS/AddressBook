@@ -54,7 +54,7 @@ namespace AddressBook
         {
             Contact selectedContact = (Contact)e.ClickedItem;
            // Selected.Text = selectedContact.Name;
-            MainPage.MainPageFrame.Navigate(typeof(EditContacts),selectedContact.Name);
+            MainPage.MainPageFrame.Navigate(typeof(EditContacts),selectedContact.id);
         }
     }
 }
