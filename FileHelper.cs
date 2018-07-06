@@ -11,6 +11,29 @@ namespace AddressBook
 {
     public static class FileHelper
     {
+
+        // Create a new text file to the app's local folder. 
+
+        public static async Task<string> CreateTextFile(string filename, string contents)
+        {
+
+            StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+            try
+            {
+                var file = await localFolder.GetFileAsync(filename);
+                await file.DeleteAsync();
+            }
+            catch (System.IO.FileNotFoundException)
+            {
+                //ignore
+            }
+
+            return await WriteTextFile(filename, contents);
+        }
+
+
+
+
         // Write a text file to the app's local folder. 
 
         public static async Task<string> WriteTextFile(string filename, string contents)
