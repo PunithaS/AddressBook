@@ -16,10 +16,38 @@
 
         <ListView Name="ContactsListView" SelectionChanged="ContactsListView_SelectionChanged" IsItemClickEnabled="True" ItemClick="ContactsListView_ItemClick">
             <ListView.ItemTemplate>
+
                 <DataTemplate x:DataType="data:Contact">
-                    <StackPanel>
-                        <TextBlock Text="{x:Bind Name}" />
-                    </StackPanel>
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                            
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel>
+                                <TextBlock Text="{x:Bind Name}" />
+                            </StackPanel>
+                            
+                            <StackPanel x:Name="space" Orientation="Horizontal" HorizontalAlignment="Right" CornerRadius="6,6,6,6" Width="850" >
+                               
+                            </StackPanel>
+                            <StackPanel x:Name="Button1" Orientation="Horizontal" HorizontalAlignment="Right" CornerRadius="6,0,0,6" >
+                                <Button Content="Edit" />
+                            </StackPanel>
+                            <StackPanel x:Name="Button2" Orientation="Horizontal" HorizontalAlignment="Right" CornerRadius="0,0,0,0" >
+
+                                <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Content="&#xE107;" />
+                                
+                            </StackPanel>
+                            <StackPanel x:Name="Button3" Orientation="Horizontal" HorizontalAlignment="Right" CornerRadius="0,6,6,0" >
+                                
+                                <Button Content="Favourite" />
+                            </StackPanel>
+                            
+                        </StackPanel>
+                    </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
