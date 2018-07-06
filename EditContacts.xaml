@@ -33,7 +33,7 @@
         <TextBlock Text="Edit Contact" FontSize="48" Grid.ColumnSpan="3" Margin="50,20,0,20" />
 
         <TextBlock Grid.Row="1" Text="Full Name " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
-        <TextBox x:Name="Name" IsReadOnly="True" Grid.Row="1" Grid.Column="1" Margin="0,20,0,20" Text="{Binding Name,Mode=TwoWay}"/>
+        <TextBox x:Name="Name" Grid.Row="1" Grid.Column="1" Margin="0,20,0,20" Text="{Binding Name,Mode=TwoWay}"/>
 
         <TextBlock Grid.Row="2" Text="Personal Phone Number " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
         <TextBox x:Name="HPhone" Grid.Row="2" Grid.Column="1" Margin="0,20,0,20" Text="{Binding Hphone,Mode=TwoWay}" />
