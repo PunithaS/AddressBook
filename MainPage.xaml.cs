@@ -23,11 +23,13 @@ namespace AddressBook
     public sealed partial class MainPage : Page
     {
         public static Frame MainPageFrame;
+        public static ListBoxItem MainPageContactListBox;
 
         public MainPage()
         {
             this.InitializeComponent();
             MainPageFrame = MyFrame;
+            MainPageContactListBox = ContactList;
             MyFrame.Navigate(typeof(Contacts));
         }
 
@@ -49,6 +51,10 @@ namespace AddressBook
             else if (DeleteContact.IsSelected)
             {
                 MyFrame.Navigate(typeof(DeleteContact));
+            }
+            else if (EditContact.IsSelected)
+            {
+                MyFrame.Navigate(typeof(EditNavigationPage));
             }
         }
     }

@@ -14,7 +14,7 @@
             <RowDefinition Height="100" />
         </Grid.RowDefinitions>
 
-        <ListView Name="ContactsListView" SelectionChanged="ContactsListView_SelectionChanged" IsItemClickEnabled="True" ItemClick="ContactsListView_ItemClick">
+        <ListView Name="ContactsListView" IsItemClickEnabled="True" ItemClick="ContactsListView_ItemClick">
             <ListView.ItemTemplate>
 
                 <DataTemplate x:DataType="data:Contact">
@@ -33,11 +33,11 @@
                             </StackPanel>
                             
                             
-                            <StackPanel Grid.Column="1" x:Name="Buttons" Orientation="Horizontal" HorizontalAlignment="Right" CornerRadius="6,6,6,6" >
+                         <!--   <StackPanel Grid.Column="1" x:Name="Buttons" Orientation="Horizontal" HorizontalAlignment="Right" CornerRadius="6,6,6,6" >
                             <Button FontFamily="Segoe MDL2 Assets" FontSize="20" Content="&#xE104;" Click="EditButton_Click" />
                             <Button FontFamily="Segoe MDL2 Assets" FontSize="20" Content="&#xE107;" Click="DeleteButton_Click" Visibility="Visible" />
                             <Button FontFamily="Segoe MDL2 Assets" FontSize="20" Content="&#xE113;" />
-                            </StackPanel>
+                            </StackPanel> -->
                             
                             
                             

@@ -112,6 +112,9 @@
     <Compile Include="DeleteContact.xaml.cs">
       <DependentUpon>DeleteContact.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EditNavigationPage.xaml.cs">
+      <DependentUpon>EditNavigationPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FileHelper.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -156,6 +159,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DeleteContact.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditNavigationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
