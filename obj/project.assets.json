@@ -27494,24 +27494,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ver-a\\.nuget\\packages\\": {},
+    "C:\\Users\\dbansa\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ver-a\\source\\repos\\AddressBook\\SoftwareDevC1Team4-1\\SoftwareDevC1Team4\\AddressBook.csproj",
+      "projectUniqueName": "C:\\GitHub\\SoftwareDevC1Team4_1\\AddressBook.csproj",
       "projectName": "AddressBook",
-      "projectPath": "C:\\Users\\ver-a\\source\\repos\\AddressBook\\SoftwareDevC1Team4-1\\SoftwareDevC1Team4\\AddressBook.csproj",
-      "packagesPath": "C:\\Users\\ver-a\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ver-a\\source\\repos\\AddressBook\\SoftwareDevC1Team4-1\\SoftwareDevC1Team4\\obj\\",
+      "projectPath": "C:\\GitHub\\SoftwareDevC1Team4_1\\AddressBook.csproj",
+      "packagesPath": "C:\\Users\\dbansa\\.nuget\\packages\\",
+      "outputPath": "C:\\GitHub\\SoftwareDevC1Team4_1\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\ver-a\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dbansa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

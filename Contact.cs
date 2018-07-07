@@ -18,6 +18,7 @@ namespace AddressBook
         public string Name { get; set; }
         public string Hphone { get; set; }
         public string Wphone { get; set; }
+        public DateTime DOB { get; set; }
         public string Email { get; set; }
         public string Street1 { get; set; }
         public string Street2 { get; set; }
@@ -67,7 +68,8 @@ namespace AddressBook
                         State = contactsData[7],
                         Zip = contactsData[8],
                         id = contactsData[9],
-                        IsFav = contactsData[10]
+                        IsFav = contactsData[10],
+                        DOB = Convert.ToDateTime(contactsData[11])
 
                     };
                     contactsList.Add(contact);
@@ -105,6 +107,7 @@ namespace AddressBook
                     contact.Zip = contactsData[8];
                     contact.id = contactsData[9];
                     contact.IsFav = contactsData[10];
+                    contact.DOB = Convert.ToDateTime(contactsData[11]);
                 }
             }
             return contact;
@@ -114,7 +117,7 @@ namespace AddressBook
         {
             var contactData = $"{contacts.Name};{contacts.Hphone};" +
                 $"{contacts.Wphone};{contacts.Email};{contacts.Street1};" +
-                $"{contacts.Street2};{contacts.City};{contacts.State};{contacts.Zip};{contacts.id};{contacts.IsFav}";
+                $"{contacts.Street2};{contacts.City};{contacts.State};{contacts.Zip};{contacts.id};{contacts.IsFav};{contacts.DOB.ToString()}";
             await FileHelper.WriteTextFile(TEXT_FILE, contactData);
         }
 
@@ -122,7 +125,7 @@ namespace AddressBook
         {
             var contactData = $"{contacts.Name};{contacts.Hphone};" +
                 $"{contacts.Wphone};{contacts.Email};{contacts.Street1};" +
-                $"{contacts.Street2};{contacts.City};{contacts.State};{contacts.Zip};{contacts.id};{contacts.IsFav}";
+                $"{contacts.Street2};{contacts.City};{contacts.State};{contacts.Zip};{contacts.id};{contacts.IsFav};{contacts.DOB.ToString()}";
             await FileHelper.AppendTextFile(TEXT_FILE, contactData);
         }
 
@@ -149,6 +152,7 @@ namespace AddressBook
                     oldContactsDataPerLine[6] = editedContacts.City;
                     oldContactsDataPerLine[7] = editedContacts.State;
                     oldContactsDataPerLine[8] = editedContacts.Zip;
+                    oldContactsDataPerLine[11] = editedContacts.DOB.ToString();
                 }
                 updatedLines.Add(string.Join(";", oldContactsDataPerLine));
             }
@@ -162,7 +166,7 @@ namespace AddressBook
             {
                 contactsData += $"{contact.Name};{contact.Hphone};{contact.Wphone};" +
                     $"{contact.Email};{contact.Street1};{contact.Street1};" +
-                    $"{contact.City};{contact.State};{contact.Zip};{contact.id};{contact.IsFav}" + Environment.NewLine;
+                    $"{contact.City};{contact.State};{contact.Zip};{contact.id};{contact.IsFav};{contact.DOB.ToString()}" + Environment.NewLine;
             }
 
             await FileHelper.CreateTextFile(TEXT_FILE, contactsData);
@@ -192,7 +196,8 @@ namespace AddressBook
                         State = contactsData[7],
                         Zip = contactsData[8],
                         id = contactsData[9],
-                        IsFav = contactsData[10]
+                        IsFav = contactsData[10],
+                        DOB = Convert.ToDateTime(contactsData[11])
                     };
                     favContactsList.Add(favContact);
                 }

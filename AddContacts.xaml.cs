@@ -70,6 +70,7 @@ namespace AddressBook
                         Name = Name.Text,
                         Hphone = HPhone.Text,
                         Wphone = WPhone.Text,
+                        DOB = DOB.Date.DateTime,
                         Email = Email.Text,
                         Street1 = Street1.Text,
                         Street2 = Street2.Text,
