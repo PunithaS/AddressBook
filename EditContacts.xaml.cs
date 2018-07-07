@@ -33,12 +33,12 @@ namespace AddressBook
         //When clicking Cancel button, user gets navigated to the contact-list page where all contacts are displayed.
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Contacts));
+            this.Frame.Navigate(typeof(EditNavigationPage));
 
         }
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
-             string selectedId = (string)e.Parameter;
+            string selectedId = (string)e.Parameter;
             contactItem = await Contact.GetSingleContactsAsync(selectedId);
             Name.Text = contactItem.Name;
             HPhone.Text = contactItem.Hphone;

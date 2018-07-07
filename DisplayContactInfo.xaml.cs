@@ -42,7 +42,6 @@ namespace AddressBook
             Street2.Text = displayContact.Street2 + " , " + displayContact.City + " , " + displayContact.State + " , " + displayContact.Zip;
             IsFav.Visibility = Convert.ToBoolean(displayContact.IsFav) ? Visibility.Visible : Visibility.Collapsed;
             DOB.Text = displayContact.DOB.ToString("d");
-            //CheckFav.IsChecked = Convert.ToBoolean(displayContact.IsFav);
         }
     }
 }
