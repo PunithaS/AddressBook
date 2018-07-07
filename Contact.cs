@@ -55,6 +55,11 @@ namespace AddressBook
                 var lines = await FileIO.ReadLinesAsync(contactFile);
                 foreach (var line in lines)
                 {
+                    if(string.IsNullOrWhiteSpace(line))
+                    {
+                        continue;
+                    }
+
                     var contactsData = line.Split(';');
                     var contact = new Contact
                     {
@@ -68,10 +73,18 @@ namespace AddressBook
                         State = contactsData[7],
                         Zip = contactsData[8],
                         id = contactsData[9],
-                        IsFav = contactsData[10],
-                        DOB = Convert.ToDateTime(contactsData[11])
-
+                        IsFav = contactsData[10]
                     };
+                    
+                    if(contactsData.Length > 11)
+                    {
+                        contact.DOB = Convert.ToDateTime(contactsData[11]);
+                    }
+                    else
+                    {
+                        contact.DOB = DateTime.Now;
+                    }
+
                     contactsList.Add(contact);
                 }
             }
