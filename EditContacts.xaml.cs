@@ -50,6 +50,7 @@ namespace AddressBook
             State.Text = contactItem.State;
             Zip.Text = contactItem.Zip;
             hangindId=contactItem.id;
+            DOB.Date = new DateTimeOffset(contactItem.DOB);
         }
 
         //When clicking Save button, a new contact is saved created
@@ -66,8 +67,8 @@ namespace AddressBook
                 City = City.Text,
                 State = State.Text,
                 Zip = Zip.Text,
-                id=hangindId
-
+                id=hangindId,
+                DOB=DOB.Date.DateTime
             };
                 Contact.EditContact(editedContacts);
           //  MainPage.MainPageFrame.Navigate(typeof(Contacts));

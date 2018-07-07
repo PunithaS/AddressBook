@@ -20,6 +20,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
@@ -41,17 +42,20 @@
         <TextBlock Grid.Row="3" Text="Work Phone Number " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
         <TextBox x:Name="WPhone" Grid.Row="3" Grid.Column="1" Margin="0,20,0,20" Text="{Binding Wphone,Mode=TwoWay}" />
 
-        <TextBlock Grid.Row="4" Text="Email " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
-        <TextBox x:Name="Email" Grid.Row="4" Grid.Column="1" Margin="0,20,0,20" Text="{Binding Email,Mode=TwoWay}"/>
+        <TextBlock Grid.Row="4" Text="Date Of Birth " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
+        <DatePicker x:Name="DOB" Grid.Column="1" HorizontalAlignment="Left" Margin="0.5,0,0,10" Grid.Row="4" VerticalAlignment="Bottom" Height="45" Width="735"/>
+
+        <TextBlock Grid.Row="5" Text="Email " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
+        <TextBox x:Name="Email" Grid.Row="5" Grid.Column="1" Margin="0,20,0,20" Text="{Binding Email,Mode=TwoWay}"/>
 
 
-        <TextBlock Grid.Row="5" Text="Address 1 " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
-        <TextBox x:Name="Street1" Grid.Row="5" Grid.Column="1" Margin="0,20,0,20" Text="{Binding Address1,Mode=TwoWay}"/>
+        <TextBlock Grid.Row="6" Text="Address 1 " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
+        <TextBox x:Name="Street1" Grid.Row="6" Grid.Column="1" Margin="0,20,0,20" Text="{Binding Address1,Mode=TwoWay}"/>
 
-        <TextBlock Grid.Row="6" Text="Address 2 " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
-        <TextBox x:Name="Street2" Grid.Row="6" Grid.Column="1" Margin="0,20,0,20" Text="{Binding Address2,Mode=TwoWay}"/>
+        <TextBlock Grid.Row="7" Text="Address 2 " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
+        <TextBox x:Name="Street2" Grid.Row="7" Grid.Column="1" Margin="0,20,0,20" Text="{Binding Address2,Mode=TwoWay}"/>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.Column="1"  Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal" Grid.Row="8" Grid.Column="1"  Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
             <TextBlock Text="City " VerticalAlignment="Center" Margin="40,0,0,0" FontSize="25" HorizontalAlignment="Left" Width="52"/>
             <TextBox x:Name="City" HorizontalAlignment="Left" Height="34" VerticalAlignment="Center" Margin="0,0,0,0" Width="120" Text="{Binding City,Mode=TwoWay}"/>
 
@@ -64,12 +68,12 @@
 
 
 
-        <StackPanel Orientation="Horizontal" Grid.Row="8" Grid.Column="1">
+        <StackPanel Orientation="Horizontal" Grid.Row="9" Grid.Column="1">
             <Button x:Name="Save"  Content="Save" Margin="0,20,0,20" FontSize="30" Click="Save_Click"/>
             <Button x:Name="Cancel"  Content="Cancel" Margin="200,20,0,20" FontSize="30" Click="Cancel_Click"/>
         </StackPanel>
 
-        <TextBlock x:Name="Output" Grid.Row="9" Grid.Column="1" FontSize="25"/>
+        <TextBlock x:Name="Output" Grid.Row="10" Grid.Column="1" FontSize="25"/>
 
     </Grid>
 </Page>
