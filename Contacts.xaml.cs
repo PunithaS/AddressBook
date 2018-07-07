@@ -50,9 +50,10 @@ namespace AddressBook
 
         private void ContactsListView_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ///Contact selectedContact = (Contact)e.ClickedItem;
-            // Selected.Text = selectedContact.Name;
-            ///MainPage.MainPageFrame.Navigate(typeof(EditContacts), selectedContact.Name);
+            Contact selectedContact = (Contact)e.ClickedItem;
+            //Selected.Text = selectedContact.Name;
+            //MainPage.MainPageFrame.Navigate(typeof(EditContacts), selectedContact.Name);
+            this.Frame.Navigate(typeof(DisplayContactInfo), selectedContact);
         }
 
 
