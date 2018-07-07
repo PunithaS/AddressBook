@@ -63,6 +63,14 @@
                     </ListBoxItem>
                     
 
+
+                    <ListBoxItem Name="EditContact">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE104;" />
+                            <TextBlock Text="Edit Contact"  FontSize="36" Margin="10,0,0,0" />
+                        </StackPanel>
+                    </ListBoxItem>
+
                 </ListBox>
                 
             </SplitView.Pane>

@@ -40,24 +40,14 @@ namespace AddressBook
             ContactsListView.ItemsSource = ContactsList;
         }
 
-        private void ContactsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //ListViewItem lbi = ((sender as ListBox).SelectedItem as ListViewItem);
-            //Selected.Text = "   You selected " + lbi.Content.ToString() + ".";
-
-        }
-
-
         private void ContactsListView_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ///Contact selectedContact = (Contact)e.ClickedItem;
-            // Selected.Text = selectedContact.Name;
-            ///MainPage.MainPageFrame.Navigate(typeof(EditContacts), selectedContact.Name);
+           // Contact selectedContact = (Contact)e.ClickedItem;
+         //   Selected.Text = selectedContact.Name;
+          //  MainPage.MainPageFrame.Navigate(typeof(EditContacts), selectedContact.id);
         }
-
-
         
-        private async void DeleteButton_Click(object sender, RoutedEventArgs e)
+      /*  private async void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             var index = ContactsListView.SelectedIndex;
 
@@ -87,6 +77,6 @@ namespace AddressBook
             Contact selectedContact = ContactsListView.SelectedItem as Contact;
             // Selected.Text = selectedContact.Name;
             MainPage.MainPageFrame.Navigate(typeof(EditContacts), selectedContact.id);
-        }
+        }*/
     }
 }
