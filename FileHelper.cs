@@ -80,7 +80,7 @@ namespace AddressBook
             {
                 StorageFile textfile = await localFolder.GetFileAsync(filename);
                 await FileIO.AppendTextAsync(textfile, contents);
-                File.Delete(contents);
+                //File.Delete(contents);
                 return textfile.Path;
             }
             catch (System.IO.FileNotFoundException)
