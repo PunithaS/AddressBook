@@ -43,7 +43,8 @@
         <TextBox x:Name="WPhone" Grid.Row="3" Grid.Column="1" Margin="0,20,0,20" Text="{Binding Wphone,Mode=TwoWay}" />
 
         <TextBlock Grid.Row="4" Text="Date Of Birth " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
-        <DatePicker x:Name="DOB" Grid.Column="1" HorizontalAlignment="Left" Margin="0.5,0,0,10" Grid.Row="4" VerticalAlignment="Bottom" Height="45" Width="735"/>
+        <DatePicker x:Name="DOB" Grid.Column="1" HorizontalAlignment="Left" Margin="1,0,0,10" Grid.Row="4" VerticalAlignment="Bottom" Height="45" Width="442"/>
+        <CheckBox Name="CheckFav" Content="Add To Favorites" Grid.Row="4" IsChecked="False" HorizontalAlignment="Left" Margin="496.5,20,0,0" VerticalAlignment="Top" Grid.Column="1"  />
 
         <TextBlock Grid.Row="5" Text="Email " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
         <TextBox x:Name="Email" Grid.Row="5" Grid.Column="1" Margin="0,20,0,20" Text="{Binding Email,Mode=TwoWay}"/>

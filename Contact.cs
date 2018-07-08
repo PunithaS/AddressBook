@@ -165,6 +165,7 @@ namespace AddressBook
                     oldContactsDataPerLine[6] = editedContacts.City;
                     oldContactsDataPerLine[7] = editedContacts.State;
                     oldContactsDataPerLine[8] = editedContacts.Zip;
+                    oldContactsDataPerLine[10] = editedContacts.IsFav;
                     oldContactsDataPerLine[11] = editedContacts.DOB.ToString();
                 }
                 updatedLines.Add(string.Join(";", oldContactsDataPerLine));

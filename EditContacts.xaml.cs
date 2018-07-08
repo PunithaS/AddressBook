@@ -50,6 +50,7 @@ namespace AddressBook
             State.Text = contactItem.State;
             Zip.Text = contactItem.Zip;
             hangindId=contactItem.id;
+            CheckFav.IsChecked = Boolean.Parse(contactItem.IsFav);
             DOB.Date = new DateTimeOffset(contactItem.DOB);
         }
 
@@ -67,7 +68,8 @@ namespace AddressBook
                 City = City.Text,
                 State = State.Text,
                 Zip = Zip.Text,
-                id=hangindId,
+                id = hangindId,
+                IsFav = CheckFav.IsChecked.ToString(),
                 DOB=DOB.Date.DateTime
             };
                 Contact.EditContact(editedContacts);
