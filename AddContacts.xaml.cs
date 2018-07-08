@@ -78,7 +78,8 @@ namespace AddressBook
                         City = City.Text,
                         State = State.Text,
                         Zip = Zip.Text,
-                        IsFav = CheckFav.IsChecked.Value.ToString()
+                        IsFav = CheckFav.IsChecked.Value.ToString(),
+                        id = Guid.NewGuid().ToString()
                     };
                     Contact.AppendContact(contacts);
                     String AddedMessage = "Your contact has been added successfully.";
@@ -93,6 +94,7 @@ namespace AddressBook
                     City.Text = String.Empty;
                     State.Text = String.Empty;
                     Zip.Text = String.Empty;
+                    CheckFav.IsChecked = false;
                  }
             }  
         }
