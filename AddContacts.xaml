@@ -35,13 +35,13 @@
         <TextBlock Text="Add New Contact" FontSize="48" Grid.ColumnSpan="3" Margin="50,20,0,20" />
 
         <TextBlock Grid.Row="1" Text="Full Name " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
-        <TextBox x:Name="Name" PlaceholderText="First Name, Last Name" Grid.Row="1" Grid.Column="1"  Text="{Binding Name,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" Width="400"/>
+        <TextBox x:Name="Name" PlaceholderText="First Name, Last Name" Grid.Row="1" Grid.Column="1"  Text="{Binding Name,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" Width="460"/>
 
         <TextBlock Grid.Row="2" Text="Personal Phone Number " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
-        <TextBox x:Name="HPhone" PlaceholderText="(___) ___-___" Grid.Row="2" Grid.Column="1" Text="{Binding Hphone,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" Width="350"/>
+        <TextBox x:Name="HPhone" PlaceholderText="(___) ___-___" Grid.Row="2" Grid.Column="1" Text="{Binding Hphone,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" Width="460"/>
 
         <TextBlock Grid.Row="3" Text="Work Phone Number " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
-        <TextBox x:Name="WPhone" PlaceholderText="(___) ___-___" Grid.Row="3" Grid.Column="1" Text="{Binding Wphone,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" Width="350" />
+        <TextBox x:Name="WPhone" PlaceholderText="(___) ___-___" Grid.Row="3" Grid.Column="1" Text="{Binding Wphone,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" Width="460" />
 
         <TextBlock Grid.Row="4" Text="Date Of Birth " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
         <DatePicker x:Name="DOB" Grid.Column="1" HorizontalAlignment="Left" Margin="0.5,0,0,10" Grid.Row="4" VerticalAlignment="Bottom" Height="45" Width="735"/>
@@ -68,11 +68,11 @@
             <TextBox x:Name="Zip" PlaceholderText="Zip Code" HorizontalAlignment="Left" Height="34" VerticalAlignment="Center" Margin="0,0,0,0" Width="150" Text="{Binding Zip,Mode=TwoWay}"/>
 
         </StackPanel>
-        <TextBlock Grid.Row="9"  VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
-        <CheckBox Name="CheckFav" Content="Add To Favorites" Grid.Row="9" Grid.Column="1" IsChecked="False"  />
+        <TextBlock Grid.Row="1"  VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
+        <CheckBox Name="CheckFav" Content="Add To Favorites" Grid.Row="1" IsChecked="False" HorizontalAlignment="Left" Margin="496.5,20,0,0" VerticalAlignment="Top" Grid.Column="1"  />
 
 
-        <StackPanel Orientation="Horizontal" Grid.Row="10" Grid.Column="1">
+        <StackPanel Orientation="Horizontal" Grid.Row="9" Grid.Column="1">
             <Button x:Name="Save"  Content="Save" Margin="0,20,0,20" FontSize="30" Click="Save_Click"/>
             <Button x:Name="Cancel"  Content="Cancel" Margin="200,20,0,20" FontSize="30" Click="Cancel_Click"/>
         </StackPanel>
