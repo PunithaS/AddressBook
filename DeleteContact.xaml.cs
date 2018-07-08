@@ -23,16 +23,20 @@ namespace AddressBook
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Contacts : Page
+    public sealed partial class DeleteContact : Page
     {
         public ObservableCollection<Contact> ContactsList;
 
-        public Contacts()
+        public DeleteContact()
         {
             this.InitializeComponent();
-        }
+            //ContactsList = Contact.GetContactsAsync();
 
-        // To load contacts in a list view, we can call the function GetContactsAsync() when the event PageLoading is occuring
+            ///Asynchronous function GetContactsAsync() 
+            ///cannot be called here as a constructor function cannot be async
+            ///so to load contacts in a list view, we can call the function GetContactsAsync()
+            ///when the event PageLoading is occuring
+        }
 
         private async void Page_Loading(FrameworkElement sender, object args)
         {
@@ -40,15 +44,7 @@ namespace AddressBook
             ContactsListView.ItemsSource = ContactsList;
         }
 
-        private void ContactsListView_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Contact selectedContact = (Contact)e.ClickedItem;
-            //Selected.Text = selectedContact.Name;
-            //MainPage.MainPageFrame.Navigate(typeof(EditContacts), selectedContact.Name);
-            this.Frame.Navigate(typeof(DisplayContactInfo), selectedContact);
-        }
-        
-      /*  private async void DeleteButton_Click(object sender, RoutedEventArgs e)
+        private async void ContactsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var index = ContactsListView.SelectedIndex;
 
@@ -72,12 +68,5 @@ namespace AddressBook
                 }
             }
         }
-    
-        private void EditButton_Click(object sender, RoutedEventArgs e)
-        {
-            Contact selectedContact = ContactsListView.SelectedItem as Contact;
-            // Selected.Text = selectedContact.Name;
-            MainPage.MainPageFrame.Navigate(typeof(EditContacts), selectedContact.id);
-        }*/
     }
 }
