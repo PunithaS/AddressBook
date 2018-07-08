@@ -79,7 +79,7 @@ namespace AddressBook
                         State = State.Text,
                         Zip = Zip.Text,
                         IsFav = CheckFav.IsChecked.Value.ToString(),
-                        id = Guid.NewGuid().ToString()
+                        //id = Guid.NewGuid().ToString()
                     };
                     Contact.AppendContact(contacts);
                     String AddedMessage = "Your contact has been added successfully.";
