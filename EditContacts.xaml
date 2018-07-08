@@ -56,14 +56,14 @@
         <TextBox x:Name="Street2" Grid.Row="7" Grid.Column="1" Margin="0,20,0,20" Text="{Binding Address2,Mode=TwoWay}"/>
 
         <StackPanel Orientation="Horizontal" Grid.Row="8" Grid.Column="1"  Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
-            <TextBlock Text="City " VerticalAlignment="Center" Margin="40,0,0,0" FontSize="25" HorizontalAlignment="Left" Width="52"/>
-            <TextBox x:Name="City" HorizontalAlignment="Left" Height="34" VerticalAlignment="Center" Margin="0,0,0,0" Width="120" Text="{Binding City,Mode=TwoWay}"/>
+            <TextBlock Text="City " VerticalAlignment="Center" FontSize="25" HorizontalAlignment="Left" Width="52"/>
+            <TextBox x:Name="City" HorizontalAlignment="Left" Height="34" VerticalAlignment="Center" Margin="0,0,0,0" Width="120" Text="{Binding City, Mode=TwoWay}"/>
 
             <TextBlock Text="State " VerticalAlignment="Center" Margin="37,0,0,0" FontSize="25" HorizontalAlignment="Left" Width="64"/>
-            <TextBox x:Name="State" HorizontalAlignment="Left" Height="34" VerticalAlignment="Center" Margin="0,0,0,0" Width="120" Text="{Binding State,Mode=TwoWay}"/>
+            <TextBox x:Name="State" HorizontalAlignment="Left" Height="34" VerticalAlignment="Center" Margin="0,0,0,0" Width="120" Text="{Binding State, Mode=TwoWay}"/>
 
-            <TextBlock Text="Zip Code " VerticalAlignment="Center" Margin="50,0,0,0" FontSize="25" HorizontalAlignment="Left" Width="109"/>
-            <TextBox x:Name="Zip" HorizontalAlignment="Left" Height="34" VerticalAlignment="Center" Margin="0,0,0,0" Width="120" Text="{Binding Zip,Mode=TwoWay}"/>
+            <TextBlock Text="Zip" VerticalAlignment="Center" Margin="50,0,0,0" FontSize="25" HorizontalAlignment="Left" Width="52"/>
+            <TextBox x:Name="Zip" HorizontalAlignment="Left" Height="34" VerticalAlignment="Center" Width="120" Text="{Binding Zip, Mode=TwoWay}" Margin="0,0,0,0"/>
         </StackPanel>
 
 

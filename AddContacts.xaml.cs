@@ -93,6 +93,7 @@ namespace AddressBook
                     City.Text = String.Empty;
                     State.Text = String.Empty;
                     Zip.Text = String.Empty;
+                    CheckFav.IsChecked = false;
                  }
             }  
         }
