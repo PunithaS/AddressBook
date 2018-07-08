@@ -28,7 +28,8 @@ namespace AddressBook
         }
         private void BACK_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Contacts));
+            this.Frame.GoBack();
+            //this.Frame.Navigate(typeof(Contacts));
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {

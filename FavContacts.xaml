@@ -18,16 +18,12 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-
         <StackPanel>
-            <ListView Name="FavContactsListView">
+            <ListView Name="FavContactsListView" IsItemClickEnabled="True" ItemClick="FavContactsListView_ItemClick">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="data:Contact">
                         <StackPanel>
-                            <TextBlock Name="Name" Text="{x:Bind Name}" />
-                            <TextBlock Name="Hphone" Text="{x:Bind Hphone}"/>
-                            <TextBlock Name="Wphone" Text="{x:Bind Wphone}" Margin="4"/>
-                            <TextBlock Text="{x:Bind Email}" Margin="4"/>
+                            <TextBlock Name="Name" Text="{x:Bind Name}" />                            
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
