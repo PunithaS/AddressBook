@@ -35,5 +35,12 @@ namespace AddressBook
             FavContactsListView.ItemsSource = FavContactsList;
 
         }
+
+        
+        private void FavContactsListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Contact selectedContact = (Contact)e.ClickedItem;
+            this.Frame.Navigate(typeof(DisplayContactInfo), selectedContact);
+        }
     }
 }
