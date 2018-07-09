@@ -7,75 +7,79 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <ScrollViewer>
 
-    <Grid  Margin="10,0,0,0" Background="#FFBFE7EE">
+            <Grid  Margin="10,0,0,0" Background="#FFBFE7EE">
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="3*" />
-            <ColumnDefinition Width="1*" />
-        </Grid.ColumnDefinitions>
-
-
-        <TextBlock Text="Edit Contact : " FontWeight="Bold" FontSize="30" Margin="10,13,0,0" />
-        
-        <TextBlock Grid.Row="1" Text="Full Name " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
-        <TextBox x:Name="Name" Grid.Row="1" Grid.Column="1" Text="{Binding Name,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" Width="460"/>
-
-        <TextBlock Grid.Row="2" Text="Personal Phone Number " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
-        <TextBox x:Name="HPhone" Grid.Row="2" Grid.Column="1" Text="{Binding Hphone,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" Width="460"/>
-
-        <TextBlock Grid.Row="3" Text="Work Phone Number " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
-        <TextBox x:Name="WPhone" Grid.Row="3" Grid.Column="1" Text="{Binding Wphone,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" Width="460"/>
-
-        <TextBlock Grid.Row="4" Text="Date Of Birth " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
-        <DatePicker x:Name="DOB" Grid.Column="1" HorizontalAlignment="Left" Margin="0.5,0,0,10" Grid.Row="4" VerticalAlignment="Bottom" Height="45" Width="735"/>
-
-        <TextBlock Grid.Row="5" Text="Email " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
-        <TextBox x:Name="Email" Grid.Row="5" Grid.Column="1"  Text="{Binding Email,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" Width="634"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
 
 
-        <TextBlock Grid.Row="6" Text="Address  " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
-        <TextBox x:Name="Street1" Grid.Row="6" Grid.Column="1"  Text="{Binding Address1,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" Width="634"/>
+                <TextBlock Text="Edit Contact : " FontWeight="Bold" FontSize="30" Margin="10,13,0,0" />
 
-        <TextBlock Grid.Row="7" Text="" VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
-        <TextBox x:Name="Street2" Grid.Row="7" Grid.Column="1" Text="{Binding Address2,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" Width="634"/>
+                <TextBlock Grid.Row="1" Text="Full Name " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
+                <TextBox x:Name="Name" Grid.Row="1" Grid.Column="1" Text="{Binding Name,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" Width="460"/>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="8" Grid.Column="1"  Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
-            <TextBlock Text="City " VerticalAlignment="Center" FontSize="25" HorizontalAlignment="Left" Width="52"/>
-            <TextBox x:Name="City" HorizontalAlignment="Left" Height="34" VerticalAlignment="Center" Margin="0,20,0,20" Width="120" Text="{Binding City, Mode=TwoWay}"/>
+                <TextBlock Grid.Row="2" Text="Personal Phone Number " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
+                <TextBox x:Name="HPhone" Grid.Row="2" Grid.Column="1" Text="{Binding Hphone,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" Width="460"/>
 
-            <TextBlock Text="State " VerticalAlignment="Center" Margin="37,0,0,0" FontSize="25" HorizontalAlignment="Left" Width="64"/>
-            <TextBox x:Name="State" HorizontalAlignment="Left" Height="34" VerticalAlignment="Center" Margin="0,20,0,20" Width="120" Text="{Binding State, Mode=TwoWay}"/>
+                <TextBlock Grid.Row="3" Text="Work Phone Number " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
+                <TextBox x:Name="WPhone" Grid.Row="3" Grid.Column="1" Text="{Binding Wphone,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" Width="460"/>
 
-            <TextBlock Text="Zip" VerticalAlignment="Center" Margin="50,0,0,0" FontSize="25" HorizontalAlignment="Left" Width="52"/>
-            <TextBox x:Name="Zip" HorizontalAlignment="Left" Height="34" VerticalAlignment="Center" Width="120" Text="{Binding Zip, Mode=TwoWay}" Margin="0,20,0,20"/>
-        </StackPanel>
+                <TextBlock Grid.Row="4" Text="Date Of Birth " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
+                <DatePicker x:Name="DOB" Grid.Column="1" HorizontalAlignment="Left" Margin="0.5,0,0,10" Grid.Row="4" VerticalAlignment="Bottom" Height="45" Width="735"/>
 
-        <TextBlock Grid.Row="1"  VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
-        <CheckBox Name="CheckFav" Content="Add To Favorites" Grid.Row="1" IsChecked="False" HorizontalAlignment="Left" Margin="496.5,20,0,0" VerticalAlignment="Top" Grid.Column="1"  />
+                <TextBlock Grid.Row="5" Text="Email " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
+                <TextBox x:Name="Email" Grid.Row="5" Grid.Column="1"  Text="{Binding Email,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" Width="634"/>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="9" Grid.Column="1">
-            <Button x:Name="Save"  Content="Save" Margin="0,20,0,20" FontSize="30" Click="Save_Click"/>
-            <Button x:Name="Cancel"  Content="Cancel" Margin="200,20,0,20" FontSize="30" Click="Cancel_Click"/>
-        </StackPanel>
 
-        <TextBlock x:Name="Output" Grid.Row="10" Grid.Column="1" FontSize="25"/>
+                <TextBlock Grid.Row="6" Text="Address  " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
+                <TextBox x:Name="Street1" Grid.Row="6" Grid.Column="1"  Text="{Binding Address1,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" Width="634"/>
 
+                <TextBlock Grid.Row="7" Text="" VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
+                <TextBox x:Name="Street2" Grid.Row="7" Grid.Column="1" Text="{Binding Address2,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" Width="634"/>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="8" Grid.Column="1"  Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <TextBlock Text="City " VerticalAlignment="Center" FontSize="25" HorizontalAlignment="Left" Width="52"/>
+                    <TextBox x:Name="City" HorizontalAlignment="Left" Height="34" VerticalAlignment="Center" Margin="0,20,0,20" Width="120" Text="{Binding City, Mode=TwoWay}"/>
+
+                    <TextBlock Text="State " VerticalAlignment="Center" Margin="37,0,0,0" FontSize="25" HorizontalAlignment="Left" Width="64"/>
+                    <TextBox x:Name="State" HorizontalAlignment="Left" Height="34" VerticalAlignment="Center" Margin="0,20,0,20" Width="120" Text="{Binding State, Mode=TwoWay}"/>
+
+                    <TextBlock Text="Zip" VerticalAlignment="Center" Margin="50,0,0,0" FontSize="25" HorizontalAlignment="Left" Width="52"/>
+                    <TextBox x:Name="Zip" HorizontalAlignment="Left" Height="34" VerticalAlignment="Center" Width="120" Text="{Binding Zip, Mode=TwoWay}" Margin="0,20,0,20"/>
+                </StackPanel>
+
+                <TextBlock Grid.Row="1"  VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
+                <CheckBox Name="CheckFav" Content="Add To Favorites" Grid.Row="1" IsChecked="False" HorizontalAlignment="Left" Margin="496.5,20,0,0" VerticalAlignment="Top" Grid.Column="1"  />
+
+                <StackPanel Orientation="Horizontal" Grid.Row="9" Grid.Column="1">
+                    <Button x:Name="Save"  Content="Save" Margin="0,20,0,20" FontSize="30" Click="Save_Click"/>
+                    <Button x:Name="Cancel"  Content="Cancel" Margin="200,20,0,20" FontSize="30" Click="Cancel_Click"/>
+                </StackPanel>
+
+                <TextBlock x:Name="Output" Grid.Row="10" Grid.Column="1" FontSize="25"/>
+
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Page>
