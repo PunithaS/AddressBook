@@ -17,45 +17,24 @@
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
+     
+        <StackPanel>
+            <TextBlock Text="Your Contacts :" FontSize="30" FontWeight="Bold" Margin="10,13,0,0" />
 
-        <ListView Name="ContactsListView" IsItemClickEnabled="True" ItemClick="ContactsListView_ItemClick">
-            <ListView.ItemTemplate>
-
-                <DataTemplate x:DataType="data:Contact">
-                    <Grid>
-
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="auto" />
-                            
-                        </Grid.ColumnDefinitions>
-                        
-                        
-                            
+            <ListView Name="ContactsListView" IsItemClickEnabled="True" ItemClick="ContactsListView_ItemClick">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="data:Contact">
+                        <Grid>
                             <StackPanel>
-                                <TextBlock Text="{x:Bind Name}" />
+                                <TextBlock  Name="Name"  Text="{x:Bind Name}" FontSize="30" Margin="10,13,0,0"/>
                             </StackPanel>
-                            
-                            
-                         <!--   <StackPanel Grid.Column="1" x:Name="Buttons" Orientation="Horizontal" HorizontalAlignment="Right" CornerRadius="6,6,6,6" >
-                            <Button FontFamily="Segoe MDL2 Assets" FontSize="20" Content="&#xE104;" Click="EditButton_Click" />
-                            <Button FontFamily="Segoe MDL2 Assets" FontSize="20" Content="&#xE107;" Click="DeleteButton_Click" Visibility="Visible" />
-                            <Button FontFamily="Segoe MDL2 Assets" FontSize="20" Content="&#xE113;" />
-                            </StackPanel> -->
-                            
-                            
-                            
-                        
-                        
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
-
-
-        <TextBlock Grid.Row="1" Name="Selected" FontSize="24" />
-
+        </StackPanel>
+        
     </Grid>
 </Page>
 

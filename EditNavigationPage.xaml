@@ -14,19 +14,20 @@
             <RowDefinition Height="100" />
         </Grid.RowDefinitions>
 
-        <ListView Name="ContactsListView" IsItemClickEnabled="True" ItemClick="ContactsListView_ItemClick">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="local:Contact">
-                    <StackPanel>
-                        <TextBlock Text="{x:Bind Name}" />
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <StackPanel>
+            <TextBlock Text="Select A Contact To Edit : " FontWeight="Bold" FontSize="30" Margin="10,13,0,0" />
+            
+            <ListView Name="ContactsListView" IsItemClickEnabled="True" ItemClick="ContactsListView_ItemClick">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:Contact">
+                        <StackPanel>
+                            <TextBlock Name="Name"  Text="{x:Bind Name}" FontSize="30" Margin="10,13,0,0" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
-
-
-        <TextBlock Grid.Row="1" Name="Selected" FontSize="24" />
+        </StackPanel>
 
     </Grid>
 </Page>

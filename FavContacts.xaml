@@ -13,23 +13,22 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="100" />
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
 
         <StackPanel>
+            <TextBlock Text="Your Favorite Contacts :" FontWeight="Bold" FontSize="30" Margin="10,13,0,0" />
+            
             <ListView Name="FavContactsListView" IsItemClickEnabled="True" ItemClick="FavContactsListView_ItemClick">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="data:Contact">
                         <StackPanel>
-                            <TextBlock Name="Name" Text="{x:Bind Name}" />                            
+                            <TextBlock Name="Name"  Text="{x:Bind Name}" FontSize="30" Margin="10,13,0,0"/>                            
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            
         </StackPanel>
 
-
+        
     </Grid>
 </Page>

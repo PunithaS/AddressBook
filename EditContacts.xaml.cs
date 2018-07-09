@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -55,7 +56,7 @@ namespace AddressBook
         }
 
         //When clicking Save button, a new contact is saved created
-        private void Save_Click(object sender, RoutedEventArgs e)
+        private async void Save_Click(object sender, RoutedEventArgs e)
         {
             var editedContacts = new Contact
             {
@@ -68,13 +69,15 @@ namespace AddressBook
                 City = City.Text,
                 State = State.Text,
                 Zip = Zip.Text,
-                id = hangindId,
-                IsFav = CheckFav.IsChecked.ToString(),
+                id=hangindId,
+                IsFav = CheckFav.IsChecked.Value.ToString(),
                 DOB=DOB.Date.DateTime
             };
                 Contact.EditContact(editedContacts);
-          //  MainPage.MainPageFrame.Navigate(typeof(Contacts));
-            Output.Text = "Contact Successfully Edited!";
+            //  MainPage.MainPageFrame.Navigate(typeof(Contacts));
+            String EditedMessage = "Your contact has been updated successfully.";
+            MessageDialog msgdialog = new MessageDialog(EditedMessage, "Contact Updated!");
+            await msgdialog.ShowAsync();
         }
     }
 }

@@ -14,19 +14,19 @@
             <RowDefinition Height="100" />
         </Grid.RowDefinitions>
 
-        <ListView Name="ContactsListView" SelectionChanged="ContactsListView_SelectionChanged">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="data:Contact">
-                    <StackPanel>
-                        <TextBlock Text="{x:Bind Name}" />
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-
-
-
-        <TextBlock Grid.Row="1" Name="Selected" FontSize="24" />
+        <StackPanel>
+            <TextBlock Text="Select A Contact To Delete : " FontWeight="Bold" FontSize="30" Margin="10,13,0,0" />
+            
+            <ListView Name="ContactsListView" SelectionChanged="ContactsListView_SelectionChanged">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="data:Contact">
+                        <StackPanel>
+                            <TextBlock Name="Name"  Text="{x:Bind Name}" FontSize="30" Margin="10,13,0,0" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
 
     </Grid>
 </Page>
