@@ -1,4 +1,4 @@
-﻿ <Page
+﻿<Page
     x:Class="AddressBook.AddContacts"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -8,7 +8,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid  Margin="10,0,0,0" Background="#FFBCE3F5">
+    <Grid  Margin="10,0,0,0" Background="#FFBFE7EE">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -32,8 +32,8 @@
         </Grid.ColumnDefinitions>
 
 
-        <TextBlock Text="Add New Contact" FontSize="48" Grid.ColumnSpan="3" Margin="50,20,0,20" />
-
+        <TextBlock Text="Add New Contact : " FontWeight="Bold" FontSize="30" Margin="10,13,0,0" />
+        
         <TextBlock Grid.Row="1" Text="Full Name " VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
         <TextBox x:Name="Name" PlaceholderText="First Name, Last Name" Grid.Row="1" Grid.Column="1"  Text="{Binding Name,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" Width="460"/>
 
@@ -68,9 +68,9 @@
             <TextBox x:Name="Zip" PlaceholderText="Zip Code" HorizontalAlignment="Left" Height="34" VerticalAlignment="Center" Margin="0,0,0,0" Width="150" Text="{Binding Zip,Mode=TwoWay}"/>
 
         </StackPanel>
+        
         <TextBlock Grid.Row="1"  VerticalAlignment="Center" Margin="50,20,0,20" FontSize="25"/>
         <CheckBox Name="CheckFav" Content="Add To Favorites" Grid.Row="1" IsChecked="False" HorizontalAlignment="Left" Margin="496.5,20,0,0" VerticalAlignment="Top" Grid.Column="1"  />
-
 
         <StackPanel Orientation="Horizontal" Grid.Row="9" Grid.Column="1">
             <Button x:Name="Save"  Content="Save" Margin="0,20,0,20" FontSize="30" Click="Save_Click"/>

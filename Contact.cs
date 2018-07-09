@@ -26,7 +26,7 @@ namespace AddressBook
         public string State { get; set; }
         public string Zip { get; set; }
         public string IsFav { get; set; }
-        
+
         //public static Contact GetContacts()
         //{
         //    var cdetails = new Contact
@@ -55,7 +55,7 @@ namespace AddressBook
                 var lines = await FileIO.ReadLinesAsync(contactFile);
                 foreach (var line in lines)
                 {
-                    if(string.IsNullOrWhiteSpace(line))
+                    if (string.IsNullOrWhiteSpace(line))
                     {
                         continue;
                     }
@@ -75,8 +75,8 @@ namespace AddressBook
                         id = contactsData[9],
                         IsFav = contactsData[10]
                     };
-                    
-                    if(contactsData.Length > 11)
+
+                    if (contactsData.Length > 11)
                     {
                         contact.DOB = Convert.ToDateTime(contactsData[11]);
                     }
@@ -152,11 +152,11 @@ namespace AddressBook
             foreach (var line in originalLines)
             {
                 string[] oldContactsDataPerLine = line.Split(';');
-               
-                    if (oldContactsDataPerLine[9] == editedContacts.id)
-                    //   if(oldContactsDataPerLine[9].CompareTo(editedContacts.id)==0)
-                    {
-                        oldContactsDataPerLine[0] = editedContacts.Name;
+
+                if (oldContactsDataPerLine[9] == editedContacts.id)
+                //   if(oldContactsDataPerLine[9].CompareTo(editedContacts.id)==0)
+                {
+                    oldContactsDataPerLine[0] = editedContacts.Name;
                     oldContactsDataPerLine[1] = editedContacts.Hphone;
                     oldContactsDataPerLine[2] = editedContacts.Wphone;
                     oldContactsDataPerLine[3] = editedContacts.Email;

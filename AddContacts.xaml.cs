@@ -56,15 +56,18 @@ namespace AddressBook
                 if (!isNumericX)
                 {
                     Output.Text = "Invalid personal phone number. Please enter a valid number";
-                }else if (!isNumericY)
+                }
+                else if (!isNumericY)
                 {
                     Output.Text = "Invalid work phone number. Please enter a valid number";
-                }else if (!isNumericZ)
+                }
+                else if (!isNumericZ)
                 {
                     Output.Text = "Invalid zipcode number. Please enter a valid number";
                 }
                 else
                 {
+                    Output.Text = "";
                     var contacts = new Contact
                     {
                         id = Guid.NewGuid().ToString(),
@@ -95,8 +98,8 @@ namespace AddressBook
                     State.Text = String.Empty;
                     Zip.Text = String.Empty;
                     CheckFav.IsChecked = false;
-                 }
-            }  
+                }
+            }
         }
 
 

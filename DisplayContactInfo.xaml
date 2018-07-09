@@ -33,34 +33,34 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
-            <TextBlock x:Name="DisplayName" FontSize="30" Grid.ColumnSpan="2" Margin="50,20,0,20" HorizontalAlignment="Center" />
-            <TextBlock x:Name="IsFav" Margin="10,20,0,20" FontFamily="Segoe MDL2 Assets" FontSize="30" Text="&#xE113;" Visibility="Collapsed" />
+            <TextBlock x:Name="IsFav" Margin="0,45,0,60" FontFamily="Segoe MDL2 Assets" FontSize="30" Text="&#xE113;" />
+            <TextBlock x:Name="DisplayName" FontSize="50" Grid.ColumnSpan="2" Margin="50,20,0,20" HorizontalAlignment="Center" FontWeight="Bold" FontStyle="Italic" />
         </StackPanel>
 
-        <TextBlock Grid.Row="3" Text="Personal Phone Number:" VerticalAlignment="Center" Margin="50,20,0,20" FontSize="15"/>
-        <TextBlock x:Name="HPhone"  Grid.Row="3" Grid.Column="1" Text="{Binding Hphone,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,20,0,20" Width="350"/>
+        <TextBlock Grid.Row="3" FontWeight="Bold" Text="Personal Phone Number:" VerticalAlignment="Center" Margin="50,20,0,20" FontSize="15"/>
+        <TextBlock x:Name="HPhone"   FontSize="25" Grid.Row="3" Grid.Column="1" Text="{Binding Hphone,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,20,0,20" Width="350"/>
 
-        <TextBlock Grid.Row="4" Text="Work Phone Number:" VerticalAlignment="Center" Margin="50,20,0,20" FontSize="15"/>
-        <TextBlock x:Name="WPhone"  Grid.Row="4" Grid.Column="1" Text="{Binding Wphone,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,20,0,20" Width="350" />
+        <TextBlock Grid.Row="4" FontWeight="Bold" Text="Work Phone Number:" VerticalAlignment="Center" Margin="50,20,0,20" FontSize="15"/>
+        <TextBlock x:Name="WPhone"   FontSize="25" Grid.Row="4" Grid.Column="1" Text="{Binding Wphone,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,20,0,20" Width="350" />
 
-        <TextBlock Grid.Row="5" Text="Date Of Birth:" VerticalAlignment="Center" Margin="50,20,0,20" FontSize="15"/>
-        <TextBlock x:Name="DOB" Grid.Column="1" HorizontalAlignment="Left" Margin="50,20,0,20" Grid.Row="5" VerticalAlignment="Bottom" Width="735"/>
+        <TextBlock Grid.Row="5" FontWeight="Bold" Text="Date Of Birth:" VerticalAlignment="Center" Margin="50,20,0,20" FontSize="15"/>
+        <TextBlock x:Name="DOB"  FontSize="25" Grid.Column="1" HorizontalAlignment="Left" Margin="50,20,0,20" Grid.Row="5" VerticalAlignment="Bottom" Width="735"/>
 
-        <TextBlock Grid.Row="6" Text="Email:" VerticalAlignment="Center" Margin="50,20,0,20" FontSize="15"/>
-        <TextBlock x:Name="Email" Grid.Row="6" Grid.Column="1" Text="{Binding Email,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,20,0,20" Width="634"/>
+        <TextBlock Grid.Row="6" FontWeight="Bold" Text="Email:" VerticalAlignment="Center" Margin="50,20,0,20" FontSize="15"/>
+        <TextBlock x:Name="Email"  FontSize="25" Grid.Row="6" Grid.Column="1" Text="{Binding Email,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,20,0,20" Width="634"/>
 
 
-        <TextBlock Grid.Row="7" Text="Address:" VerticalAlignment="Center" Margin="50,20,0,20" FontSize="15"/>
-        <TextBlock x:Name="Street1"  Grid.Row="7" Grid.Column="1" Text="{Binding Address1,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,20,0,20" Width="634"/>
+        <TextBlock Grid.Row="7" FontWeight="Bold" Text="Address:" VerticalAlignment="Center" Margin="50,20,0,20" FontSize="15"/>
+        <TextBlock x:Name="Street1"  FontSize="25" Grid.Row="7" Grid.Column="1" Text="{Binding Address1,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,20,0,20" Width="634"/>
 
-        <TextBlock Grid.Row="8"  VerticalAlignment="Center" Margin="50,20,0,20" FontSize="15"/>
-        <TextBlock x:Name="Street2" Grid.Row="8" Grid.Column="1"  Text="{Binding Address2,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,20,0,20" Width="634"/>
+        <TextBlock Grid.Row="8"  FontWeight="Bold" VerticalAlignment="Center" Margin="50,20,0,20" FontSize="15"/>
+        <TextBlock x:Name="Street2"  FontSize="25" Grid.Row="8" Grid.Column="1"  Text="{Binding Address2,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,20,0,20" Width="634"/>
 
 
 
         <StackPanel Orientation="Horizontal" Grid.Row="10" Grid.Column="1">
             
-            <Button x:Name="BackButton"  Content="Back" Margin="200,20,0,20" FontSize="20" Click="BACK_Click"/>
+            <Button x:Name="BackButton"  Content="Back" Margin="200,90,0,90" FontSize="20" Click="BACK_Click"/>
         </StackPanel>
 
     </Grid>
